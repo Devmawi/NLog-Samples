@@ -17,6 +17,12 @@ namespace NLogDatabaseTarget.WebApp
     {
         public static void Main(string[] args)
         {
+            // https://edi.wang/post/2019/4/3/use-environment-specific-nlogconfig-in-aspnet-core
+
+            // Use the code below, if you have multiple configurations for NLog for different environments
+            // var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            // var logger = NLogBuilder.ConfigureNLog($"nlog.{environment}.config").GetCurrentClassLogger();
+            
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
             try
             {
